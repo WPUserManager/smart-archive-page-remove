@@ -1,0 +1,11 @@
+{
+  "type": "core",
+  "name": "Smart Archive Page Remove",
+  "url": "https://wordpress.org/plugins/smart-archive-page-remove/",
+  "build": "distignore",
+  "channels": { "wordpress_org": true, "edd": false },
+  "main_file": "smart-archive-page-remove.php",
+  "version_checks": [
+    { "file": "loader.php", "pattern": "'version'\\s*=>\\s*'([^']+)'" }
+  ]
+}
