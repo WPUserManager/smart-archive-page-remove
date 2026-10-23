@@ -15,7 +15,7 @@ if ( ! defined( 'WPINC' ) ) {
  */
 if ( !class_exists( 'PP_Smart_Archive_Page_Remove_Admin' ) ) {
   
-  class PP_Smart_Archive_Page_Remove_Admin extends PPF09_Admin {
+  class PP_Smart_Archive_Page_Remove_Admin extends WPUMPPF1_Admin {
 
     
     /**
@@ -84,11 +84,6 @@ if ( !class_exists( 'PP_Smart_Archive_Page_Remove_Admin' ) ) {
       );
       
     }
-	
-	function retired_notice() {
-			echo '<h2>PLEASE NOTE</h2><p>Development, maintenance and support of this plugin has been retired. You can use this plugin as long as is works for you. Thanks for your understanding.<br />Regards, Peter</p>';
-	}
-    
     /**
      * handle the settings field author
      * moved to PP_Smart_Archive_Page_Remove_Admin in v 5.0.0

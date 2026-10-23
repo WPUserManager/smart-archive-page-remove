@@ -9,9 +9,9 @@
  * Plugin Name: Smart Archive Page Remove
  * Plugin URI: https://wordpress.org/plugins/smart-archive-page-remove/
  * Description: Completely remove unwanted Archive Pages from your Blog
- * Version: 5.1.3
- * Author: Peter Raschendorfer
- * Author URI: https://profiles.wordpress.org/petersplugins/
+ * Version: 5.1.4
+ * Author: WP User Manager
+ * Author URI: https://wpusermanager.com
  * Text Domain: smart-archive-page-remove
  * License: GPL2+
  * License URI: http://www.gnu.org/licenses/gpl-2.0.txt
