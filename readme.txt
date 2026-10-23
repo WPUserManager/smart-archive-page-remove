@@ -1,6 +1,6 @@
 === Smart Archive Page Remove ===
 Contributors: wpusermanager, petersplugins
-Tags: archive page, archive pages, remove archive, remove archive pages, delete archive, delete archive pages, hide archive, hide archive pages, classicpress
+Tags: archive page, remove archive, author archive, date archive, category archive
 Requires at least: 4.0
 Tested up to: 7.1
 Stable tag: 5.1.4
