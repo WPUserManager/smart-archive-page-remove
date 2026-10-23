@@ -17,7 +17,7 @@ if ( ! defined( 'WPINC' ) ) {
  */
 if ( !class_exists( 'PP_Smart_Archive_Page_Remove_Deprecated' ) ) {
   
-  class PP_Smart_Archive_Page_Remove_Deprecated extends PPF09_SubClass {  
+  class PP_Smart_Archive_Page_Remove_Deprecated extends WPUMPPF1_SubClass {  
     
     /**
 	   * Do Init

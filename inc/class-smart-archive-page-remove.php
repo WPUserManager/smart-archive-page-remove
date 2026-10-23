@@ -16,7 +16,7 @@ if ( ! defined( 'WPINC' ) ) {
  */
 if ( !class_exists( 'PP_Smart_Archive_Page_Remove' ) ) { 
 
-  class PP_Smart_Archive_Page_Remove extends PPF09_Plugin {
+  class PP_Smart_Archive_Page_Remove extends WPUMPPF1_Plugin {
     
     /**
      * Admin Class
@@ -61,11 +61,57 @@ if ( !class_exists( 'PP_Smart_Archive_Page_Remove' ) ) {
       // since 5.0.0 we use add_settings_class() to load the settings
       $this->add_settings_class( 'PP_Smart_Archive_Page_Remove_Settings', 'class-smart-archive-page-remove-settings', $this, $defaults );
       
-      $this->add_actions( array( 
-        'init', 
-        'wp' 
+      $this->add_actions( array(
+        'init',
+        'wp'
       ) );
-      
+
+      // since 5.1.4 keep removed archive pages out of the WordPress sitemap (WP 5.5+)
+      add_filter( 'wp_sitemaps_add_provider', array( $this, 'sitemap_provider' ), 10, 2 );
+      add_filter( 'wp_sitemaps_taxonomies', array( $this, 'sitemap_taxonomies' ) );
+
+    }
+
+
+    /**
+     * leave out the users sitemap if author archives are removed
+     * used by wp_sitemaps_add_provider filter
+     *
+     * @since 5.1.4
+     */
+    function sitemap_provider( $provider, $name ) {
+
+      if ( 'users' == $name && $this->settings()->get( 'author' ) ) {
+
+        return false;
+
+      }
+
+      return $provider;
+
+    }
+
+
+    /**
+     * leave out the category and tag sitemaps if those archives are removed
+     * used by wp_sitemaps_taxonomies filter
+     *
+     * @since 5.1.4
+     */
+    function sitemap_taxonomies( $taxonomies ) {
+
+      foreach ( array( 'category' => 'category', 'post_tag' => 'tag' ) as $taxonomy => $key ) {
+
+        if ( $this->settings()->get( $key ) ) {
+
+          unset( $taxonomies[$taxonomy] );
+
+        }
+
+      }
+
+      return $taxonomies;
+
     }
     
     

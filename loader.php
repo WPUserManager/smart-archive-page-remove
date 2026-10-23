@@ -35,7 +35,7 @@ function pp_smart_archive_page_remove() {
     'slug'      => pathinfo( dirname( __FILE__ ) . '/smart-archive-page-remove.php', PATHINFO_FILENAME ),
     'name'      => 'Smart Archive Page Remove',
     'shortname' => 'Smart Archive Page Remove',
-    'version'   => '5.1.3'
+    'version'   => '5.1.4'
   ) );
   
 }
